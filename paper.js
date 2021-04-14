@@ -9,7 +9,7 @@ class Paper{
     this.body=Bodies.circle(x,y,50,option);
     this.x=x;
     this.y=y;             
-    this.radius=50;
+    this.radius=100;
     World.add(world,this.body);
     this.image=loadImage("paper.png");  
     }
@@ -21,9 +21,8 @@ class Paper{
     push();
     translate(pos.x,pos.y);
     rotate(angle);
-    rectMode(CENTER);
-    fill("red");
-    ellipse(this.x,this.y,this.radius,this.radius);
+    imageMode(CENTER);
+    image(this.image,0,15,this.radius,this.radius);
     pop();     
     }    
 }

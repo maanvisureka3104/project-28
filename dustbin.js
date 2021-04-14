@@ -17,6 +17,7 @@ class dustbin
 		World.add(world, this.leftWallBody)
 		World.add(world, this.rightWallBody);
 		this.image=loadImage("dustbingreen.png");
+		
 
 	}
 	display()
@@ -34,7 +35,7 @@ class dustbin
 			angleMode(RADIANS)
 			fill(255)
 			rotate(this.angle)
-			rect(0,0,this.wallThickness, this.dustbinHeight);
+			//rect(0,0,this.wallThickness, this.dustbinHeight);
 			pop()
 
 			push()
@@ -44,16 +45,16 @@ class dustbin
 			angleMode(RADIANS)
 			fill(255)
 			rotate(-1*this.angle)
-			rect(0,0,this.wallThickness, this.dustbinHeight);
+			//rect(0,0,this.wallThickness, this.dustbinHeight);
 			pop()
 
 			push()
 			translate(posBottom.x, posBottom.y+10);
-			rectMode(CENTER)
+			imageMode(CENTER)
 			strokeWeight(4);
 			angleMode(RADIANS)
 			fill(255)
-			rect(0,0,this.dustbinWidth, this.wallThickness);
+			image(this.image,0,-this.dustbinHeight/2,this.dustbinWidth, this.dustbinHeight);
 			pop()
 			
 	}
